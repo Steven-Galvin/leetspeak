@@ -5,6 +5,8 @@ class String
     split_word.each() do |letter|
       if letter.==("e")
         leet_array.push("3")
+      elsif letter.==("o")
+        leet_array.push("0")
       else
         leet_array.push(letter)
       end
