@@ -3,12 +3,8 @@ class String
     leet_array = []
     split_word = self.split("")
 
-    if split_word.at(0) == ("s")
-      split_word.shift()
-      split_word.unshift("~")
-    end
 
-    split_word.each() do |letter|
+    split_word.each_with_index() do |letter, index|
       if letter.==("e")
         leet_array.push("3")
       elsif letter.==("o")
@@ -16,14 +12,19 @@ class String
       elsif letter.==("I")
         leet_array.push("1")
       elsif letter.==("s")
-        leet_array.push("z")
-      elsif letter.==("~")
-        leet_array.push("s")
-
+        if split_word[index-1].==(" ")
+          leet_array.push(letter)
+          else
+            leet_array.push("z")
+          end
       else
         leet_array.push(letter)
       end
+      if leet_array[0].==("z")
+        leet_array[0].replace("s")
+      end
     end
     leet_array.join()
+
   end
 end
